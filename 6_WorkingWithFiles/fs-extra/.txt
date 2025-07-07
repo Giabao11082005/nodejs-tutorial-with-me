@@ -1,0 +1,40 @@
+th Files của Node.js: fs-extra, chokidar, và globby.
+
+✅ PHẦN 1: 10 Bài tập fs-extra
+#	Bài tập	Mô tả
+1️⃣	copyFile()	Copy file note.txt vào thư mục backup/.
+2️⃣	removeTemp()	Xóa thư mục temp/ nếu tồn tại.
+3️⃣	ensureLogsDir()	Đảm bảo thư mục logs/ luôn tồn tại.
+4️⃣	initConfig()	Tạo file config.json với {} nếu chưa tồn tại.
+5️⃣	readJsonSafely()	Đọc config.json và hiển thị nội dung dưới dạng object.
+6️⃣	backupAll()	Copy toàn bộ file trong data/ sang backup/.
+7️⃣	cleanLogs()	Xóa tất cả file .log trong thư mục logs/.
+8️⃣	updateVersion()	Đọc package.json, tăng version patch và ghi lại.
+9️⃣	mergeJsonFiles()	Gộp 2 file a.json, b.json thành merged.json.
+🔟	cloneFolder()	Sao chép thư mục project/ sang project-backup/.
+
+✅ PHẦN 2: 10 Bài tập chokidar
+#	Bài tập	Mô tả
+1️⃣	watchSingleFile()	Theo dõi note.txt → log khi bị sửa.
+2️⃣	watchAddFile()	Theo dõi data/ → khi có file mới, log tên.
+3️⃣	syncNewFile()	Copy file mới từ data/ sang backup/.
+4️⃣	syncDeleteFile()	Nếu file bị xóa khỏi data/, xóa khỏi backup/.
+5️⃣	watchAllEvents()	Theo dõi data/ → in log khi thêm/xóa/sửa.
+6️⃣	autoLogToFile()	Mỗi thay đổi file → ghi vào events.log.
+7️⃣	watchJsonConfig()	Khi config.json thay đổi → reload config.
+8️⃣	autoTimestampRename()	Khi có file mới → đổi tên file thành có thêm timestamp.
+9️⃣	watchMultipleDirs()	Theo dõi nhiều thư mục a/, b/, c/ cùng lúc.
+🔟	sendSlackAlertOnChange()	(giả lập) log ra "Send Slack alert!" khi có thay đổi quan trọng.
+
+✅ PHẦN 3: 10 Bài tập globby
+#	Bài tập	Mô tả
+1️⃣	findTxtFiles()	Tìm tất cả file .txt trong data/.
+2️⃣	findAllJson()	Tìm .json trong config/ và subfolder.
+3️⃣	ignoreNodeModules()	Tìm tất cả .js file nhưng bỏ qua node_modules/.
+4️⃣	findMultipleTypes()	Tìm .md và .txt trong toàn project.
+5️⃣	logFilePaths()	Ghi danh sách file .log vào log.txt.
+6️⃣	listLargeFiles()	Tìm file .txt có size > 1MB (kết hợp fs.stat()).
+7️⃣	findRecentFiles()	Tìm file tạo trong 24h qua.
+8️⃣	scanAndRemoveTrash()	Xóa tất cả .tmp, .bak, .DS_Store.
+9️⃣	findEmptyFiles()	Liệt kê file .txt có dung lượng bằng 0.
+🔟	moveSelectedFiles()	Tìm tất cả .json trong temp/ → di chuyển về config/.

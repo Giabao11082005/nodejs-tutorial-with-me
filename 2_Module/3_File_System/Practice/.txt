@@ -1,0 +1,35 @@
+📗 10 BÀI TẬP CƠ BẢN (ÔN LẠI KIẾN THỨC)
+ Đọc file note.txt và in ra nội dung
+Dùng fs.readFile() hoặc fs.promises.readFile()
+
+✅ Ghi nội dung "Hello, Node.js" vào file hello.txt
+
+Sử dụng fs.writeFile()
+
+✅ Thêm dòng "Học lập trình rất vui" vào cuối file hello.txt
+
+Sử dụng fs.appendFile()
+
+✅ Kiểm tra xem file data.json có tồn tại không
+Dùng fs.existsSync() hoặc fs.access()
+
+✅ Đổi tên file old.txt thành new.txt
+Dùng fs.rename()
+
+✅ Xóa file delete.txt nếu tồn tại
+
+Dùng fs.unlink()
+
+✅ Tạo thư mục mới tên là logs/
+
+Dùng fs.mkdir()
+
+✅ Đọc danh sách tất cả file trong thư mục logs/
+Dùng fs.readdir()
+
+✅ Kiểm tra xem notes.txt là file hay thư mục
+Dùng fs.stat() kết hợp .isFile() / .isDirectory()
+
+✅ Ghi file sử dụng fs.promises và async/await
+await fs.promises.writeFile("async.txt", "Hello from async")
+

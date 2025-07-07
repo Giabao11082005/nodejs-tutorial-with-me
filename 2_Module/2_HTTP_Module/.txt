@@ -1,0 +1,49 @@
+Tạo một server đơn giản trả về "Hello World"
+Trả về file HTML tĩnh khi người dùng truy cập /home
+Xử lý nhiều đường dẫn (route): /, /about, /contact trả về nội dung khác nhau
+Trả về status code 404 khi truy cập sai đường dẫn
+* Thiết lập Header Content-Type cho HTML, JSON, text
+Tạo server trả về JSON response
+Lấy và hiển thị method HTTP (GET, POST, ...)
+Trích xuất req.url và req.method rồi in ra
+Phân tích query string từ URL (sử dụng url module)
+*** Gửi dữ liệu từ client (form HTML) và xử lý dữ liệu đó trong server (POST)
+
+💼 Phần 2: 20 Bài tập thực tế – Làm chủ kiến thức
+Mục tiêu: Xây dựng server xử lý thực tế: router, form, file, API nhỏ,...
+Xây dựng router thủ công: xử lý nhiều endpoint mà không dùng Express
+Tạo API trả về danh sách sản phẩm (dạng JSON)
+Đọc file HTML và trả về khi truy cập /home
+** Tạo router trả về dữ liệu động dựa theo query string, ví dụ: /hello?name=Bao
+
+*** Tạo form HTML (method POST) và xử lý dữ liệu người dùng nhập
+
+** 16, Ghi dữ liệu form vào file .txt
+
+17, Tạo API POST nhận dữ liệu JSON từ client và lưu lại
+
+Tạo response JSON với mã lỗi 400 nếu thiếu dữ liệu
+
+Tạo endpoint /download cho phép người dùng tải file
+
+Tạo server xử lý upload file (dùng formidable)
+
+Trả về ảnh (image file) khi truy cập /logo
+
+Tạo hệ thống phân quyền đơn giản: chỉ truy cập /admin nếu có token đúng trong header
+
+Ghi log request vào file log.txt
+
+Xây dựng API trả về thời gian hiện tại của server
+
+Tạo response nén bằng gzip (sử dụng zlib)
+
+Redirect từ / sang /home
+
+Phân tích cookies thủ công từ request header
+
+Tạo server hoạt động trên port được truyền từ dòng lệnh
+
+Tạo server đọc và trả về dữ liệu từ file JSON (fake db)
+
+Xây dựng server chỉ cho phép method GET và POST, các method khác trả về 405

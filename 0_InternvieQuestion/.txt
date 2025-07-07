@@ -1,0 +1,23 @@
+1, What is Node.js ?
+-> Node.js là mã nguồn mở, đa nền tảng, là một môi trường runtime thực thi mã js phía server, nó sử dụng engine v8 của Google
+
+2, What is different between Node.js and js ?
+-> Node.js: là môi trường runtime thực thi mã js phía server cung cấp API làm việc với : hệ thống mạng, hệ điều hành, tệp, ...
+-> js: là ngôn ngữ lập trình 
+
+3, Node.js is single ?
+-> Node.js là đơn luồng nhưng nhờ cơ chế event-driven + non-blocking cho phép Node.js xử lý hàng ngàn request 1 lúc
+
+4, What kind of API functions are supported by node.js?
+-> Asynchronous(non- blocking) + synchronous (blocking) 
+
+5, what is a module in node.js ?
+-> Module trong Node.js là các đơn vị code độc lập, có thể tái sử dụng, giúp tổ chức và cấu trúc ứng dụng Node.js một cách hiệu quả. 
+
+6, what is npm ?
+-> npm : Node Package Management là trình quản lý gói của Node.js, nó là mã nguồn mở giúp lập trình viên có thể cập nhật, sử dụng,
+chia sẻ và quản lý các thư viện cho các dự án dễ dàng
+
+7, what is middleware 
+8, what is control flow in node.js
+9, what do you mean by event loop in node.js

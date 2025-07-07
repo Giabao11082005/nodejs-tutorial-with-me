@@ -1,0 +1,44 @@
+🔹 Bài 1: Đường dẫn tuyệt đối và tương đối (path)
+Tạo một chương trình:
+In ra đường dẫn tuyệt đối của tệp hiện tại.
+In ra tên file, thư mục chứa file, và phần mở rộng file.
+👉 Gợi ý: __filename, __dirname, path.basename, path.extname, path.dirname
+
+🔹 Bài 2: Nối các đường dẫn
+Viết một chương trình nối đường dẫn "files", "data", "info.txt" thành một đường dẫn hợp lệ theo hệ điều hành.
+👉 Gợi ý: path.join(...), path.resolve(...)
+
+🔹 Bài 3: Kiểm tra xem đường dẫn là tuyệt đối hay tương đối
+Viết một hàm kiểm tra một chuỗi có phải là đường dẫn tuyệt đối hay không.
+👉 Gợi ý: path.isAbsolute(p)
+
+🔹 Bài 4: Tạo file mới và ghi nội dung
+Tạo một file mới tên là greeting.txt và ghi nội dung Hello, Node.js! vào trong file.
+👉 Gợi ý: fs.writeFileSync, fs.writeFile
+
+🔹 Bài 5: Đọc nội dung file đã tạo
+Đọc nội dung của file greeting.txt vừa tạo ở Bài 4 và in ra console.
+👉 Gợi ý: fs.readFileSync, fs.readFile
+
+🔹 Bài 6: Đọc danh sách file trong thư mục
+Tạo một thư mục data, chứa vài file .txt. Viết chương trình in ra danh sách tên file .txt trong thư mục data.
+👉 Gợi ý: fs.readdir, path.extname
+
+🔹 Bài 7: Thêm nội dung vào file đã tồn tại
+Viết chương trình thêm dòng "This is new line!" vào cuối file greeting.txt.
+👉 Gợi ý: fs.appendFileSync, fs.appendFile
+
+🔹 Bài 8: Đổi tên file
+Đổi tên file greeting.txt thành welcome.txt.
+
+👉 Gợi ý: fs.renameSync, fs.rename
+
+🔹 Bài 9: Xóa một file
+Xóa file welcome.txt.
+
+👉 Gợi ý: fs.unlink, fs.unlinkSync
+
+🔹 Bài 10: Kiểm tra file có tồn tại hay không
+Viết chương trình kiểm tra xem file welcome.txt còn tồn tại không.
+
+👉 Gợi ý: fs.existsSync, fs.stat

@@ -1,0 +1,68 @@
+npm: Node Package Management : trình quản lý gói Node.js
+
+Semantic Versioning: 
+- MAJOR: thay đổi lớn, phá vỡ tương thích cũ
+- MINOR: thêm tính năng mới , vẫn tương thích
+- PATCH: thay đổi nhỏ, không làm ảnh hưởng API
+
+^ : update MINOR + PATCH
+~ : PATCH
+* : update full (warning)
+
+"dependencies": {
+  "express": "^4.17.1",   // Cho phép cập nhật 4.x.x
+  "lodash": "~4.17.5",    // Cho phép cập nhật 4.17.x
+  "axios": "1.1.2"        // Chỉ dùng đúng bản 1.1.2
+}
+
+
+
+📘 Phần 1: 10 bài tập cơ bản – Củng cố kiến thức
+1, Khởi tạo 1 dự án Node.js mới với npm init.
+2, Khởi tạo nhanh 1 dự án Node.js với npm init -y.
+3, Cài đặt package lodash và kiểm tra xem nó có xuất hiện trong package.json không.
+4, Cài đặt nodemon dưới dạng devDependency.
+5, Xóa lodash khỏi project bằng lệnh npm phù hợp.
+6, Thêm một script "dev": "nodemon index.js" vào phần scripts của package.json.
+7,Chạy thử script "dev" bằng lệnh npm run dev.
+8, Viết đoạn code sử dụng lodash trong index.js để test project.
+9, Gỡ toàn bộ thư mục node_modules và cài lại bằng npm install.
+10, Cài axios@1.3.0 và ghi rõ version này vào package.json.
+
+🛠️ Phần 2: 30 bài tập thực tế – Thực hành dự án
+🧩 (A) 10 bài tập tạo project + cài package
+
+11, Tạo project todo-app, cài express và cors.
+12, Tạo project movie-api, cài express, dotenv và tạo file .env.
+13, Tạo project auth-system, cài bcryptjs và jsonwebtoken.
+14, Tạo project weather-client, cài axios và dùng để fetch dữ liệu từ API.
+15, Tạo project blog-server, cài express, mongoose và cấu hình kết nối MongoDB.
+16, Tạo project ecommerce-app, cài dotenv, cors, express, jsonwebtoken.
+17, Tạo project chat-app, cài socket.io.
+18, Tạo index.js demo tính năng của một thư viện bất kỳ bạn vừa cài.
+19, Thêm script "start": "node index.js" và "dev": "nodemon index.js" cho 1 project bất kỳ.
+20, Thêm file .gitignore để bỏ node_modules/ và .env khỏi Git.
+
+🔧 (B) 10 bài tập semantic versioning
+Thêm "lodash": "^4.17.20" vào package.json và xem npm cài bản nào.
+Thêm "axios": "~1.2.0" và kiểm tra version cài là gì.
+Cố định "express": "4.17.1" và test xem npm update có thay đổi version không.
+So sánh hiệu quả khi dùng ^, ~, và version cố định trong 1 project nhỏ.
+Gỡ package-lock.json và node_modules, rồi chạy npm install → xem kết quả.
+Cập nhật express từ ^4.17.1 lên ^4.18.2 bằng npm install.
+Tạo lỗi bằng cách để "axios": "*" → sau đó cập nhật xem có ổn định không.
+Tạo file test.json mô phỏng 3 gói với 3 loại version khác nhau và phân tích.
+Thử npm update và quan sát sự thay đổi version của từng gói.
+Chốt version an toàn cho production project.
+
+🔁 (C) 10 bài tập xử lý, quản lý package thực tế
+31,Gỡ toàn bộ package đang có (gỡ sạch node_modules, package-lock.json) và cài lại đúng version cần thiết.
+32, Tạo index.js kiểm tra xem thư viện chalk có hoạt động không (hiển thị màu).
+33, Viết script "test": "echo 'Testing project' " và chạy thử.
+34, Thử cài 1 thư viện không tồn tại, xem lỗi báo gì, rồi sửa lại cho đúng.
+35, Tạo script "build" mô phỏng việc đóng gói project.
+36, Cài eslint và cấu hình basic (viết script "lint").
+37, Clone 1 project từ GitHub và chạy npm install → sửa lỗi nếu có.
+38, Sử dụng npx chạy 1 tool bất kỳ mà không cài cục bộ (ví dụ: npx cowsay)
+39, Đọc package-lock.json và xác định sub-dependency của express.
+40, Tạo dự án mini, cài tất cả package cần thiết cho Backend (express, dotenv, cors, mongoose, bcryptjs, jsonwebtoken) và khởi tạo đầy đủ.

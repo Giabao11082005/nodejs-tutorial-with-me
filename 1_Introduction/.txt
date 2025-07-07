@@ -1,0 +1,98 @@
+📗 1. Câu hỏi cơ bản (10 câu)
+==================== Node.js là gì?
+==> Node.js là mã nguồn mở, đa nền tảng, là 1 môi trường runtime thực thi mã javascript phía server.
+==================== Node.js được xây dựng trên engine JavaScript nào?
+==> Node.js được xây dựng trên engine v8 của Google, cho phép biên dịch trực tiếp mã javascript thành mã máy
+====================Tại sao Node.js lại nhanh hơn một số nền tảng khác?
+==> Vì nó sử dụng công nghệ v8 của Google , biên dịch trực tiếp mã js thành mã máy -> rất nhanh
+==> Có cơ chế event-driven + non-blocking -> xủ lý hàng ngàn request 1 
+====================Node.js là ngôn ngữ lập trình hay môi trường runtime?
+==> nó là 1 môi trường runtime
+====================Sự khác biệt chính giữa Node.js và trình duyệt khi chạy JavaScript là gì?
+==> Node.js: chạy mã js phía server, xử lý nghiệp vụ backend logic: làm việc với hệ thống, mạng, cơ sở dữ liệu, ...
+==> browser: chạy mã js phía client, xủ lý các sự kiện người dùng, DOM, ... 
+==================== Node.js có đồng bộ hay bất đồng bộ theo mặc định?
+==> Node.js có cả đồng bộ và bất đồng bộ
+ - Đồng bộ : Synchronous: thực thi tuần tự
+ - Bất đồng bộ: Asynchronous: thực thị song song, gọi callback nếu tác vụ hoàn thành
+==================== Single-threaded trong Node.js nghĩa là gì?
+==> đơn luồng, chỉ sử dụng 1 luồng duy nhất nhưng nó vẫn có cơ chế xử lý sự kiện(event driven) + không chặn (non-blocking) -> xử lý hàng ngàn
+request 1 lúc
+==================== Các core module phổ biến trong Node.js là gì?
+==> os, fs, path, ...
+==================== Node.js có thể dùng để xây dựng những loại ứng dụng nào?
+==> Vì nó nhanh, hiệu suất cao, xử lý hàng ngàn request 1 lúc thích hợp: restful API, microservices, real-time, stream
+==================== Câu lệnh để chạy file JavaScript bằng Node.js là gì?
+==> node <ten-file.js>
+
+📘 2. Câu hỏi trung bình (10 câu)
+==================== Event loop trong Node.js là gì và hoạt động như thế nào?
+==> Event loop là cơ chế giúp Node.js xử lý bất đồng bộ trên 1 luồng đơn. Nó liên tục kiểm tra "queue" sự kiện, nếu có tác vụ sẵn sàng thì đưa 
+vào call stack để thực thi.
+==================== Callback là gì trong Node.js?
+==> callback nói 1 cách dễ hiểu là gọi lại hàm, nó được truyền vào hàm khác như 1 đối 
+==================== Tại sao Node.js lại phù hợp với ứng dụng real-time như chat?
+==> chat thì cần nhanh, ổn định. Mà node.js hỗ trợ xử lý hàng ngàn request 1 lúc nên rất phù hợp
+=====> xử lý concurrent connection và low latency.
+==================== Làm thế nào Node.js xử lý nhiều kết nối cùng lúc nếu chỉ chạy 1 luồng chính?
+=> có cơ chế event-driven + non-blocking 
+==================== Cơ chế non-blocking I/O nghĩa là gì trong Node.js?
+==> Non-blocking I/O là cơ chế cho phép Node.js khởi động các tác vụ I/O (đọc file, truy vấn DB...) mà không chặn luồng chính. 
+Thay vào đó, khi hoàn thành, Node.js sẽ xử lý kết quả thông qua callback/promise/event.
+==================== Sự khác nhau giữa require và import trong Node.js là gì?
+==> require() dùng trước ES6(dự án cũ, truyền thống) để import module trong commonjs
+==> import dùng sau ES6 (dự án mới, hiện đại) để import module trong ESM
+==================== Lợi ích khi sử dụng Node.js thay vì PHP hoặc Java?
+==> nhanh, hiệu suất cao, cộng đồng mạnh mẽ, lớn, xử lý hàng ngàn request 1 lúc
+=====> Single language (JS), fast dev cycle, real-time support tốt, xử lý concurrent tốt hơn PHP.
+==================== Node.js có tương thích đa nền tảng (cross-platform) không?
+==> có
+==================== Có thể dùng Node.js để build frontend không?
+==> Node.js không dùng để hiển thị giao diện frontend, nhưng có thể hỗ trợ build frontend app (SSR với Next.js, build tools...).
+==================== Sự khác biệt giữa process và global trong Node.js là gì?
+==> global: là object toàn cục (như window trên browser)
+process: là object đại diện cho tiến trình hiện tại, chứa info về environment, argv, env, exit, stdin/stdout...
+
+📙 3. Câu hỏi nâng cao (5 câu)
+Tại sao Node.js không phù hợp với các ứng dụng tính toán nặng CPU?
+==> Node.js chỉ có 1 luồng chính (event loop) để xử lý tất cả các tác vụ. Khi thực hiện tác vụ CPU-heavy (ví dụ: hash phức tạp, xử lý ảnh/video), 
+nó chặn luồng chính, khiến các request khác bị trì hoãn → không phù hợp. Các nền tảng như Java/Python có thể dùng đa luồng thực sự để xử lý song 
+song tốt hơn.
+Cơ chế xử lý bất đồng bộ của Node.js khác gì với multithreading?
+Node.js dùng event loop + libuv để xử lý bất đồng bộ trên 1 luồng chính, nhưng một số I/O nặng (file, DNS,...) được ủy quyền cho thread pool (ngầm).
+Trong khi đó, multithreading (như Java) sử dụng nhiều luồng thực sự, chia đều xử lý CPU/I/O.
+Giải thích mô hình kiến trúc event-driven trong Node.js.
+==> Mô hình event-driven là kiến trúc mà ứng dụng phản hồi theo các "sự kiện" (event). Node.js dùng event loop để liên tục kiểm tra hàng đợi sự kiện (event queue). Khi có sự kiện (file đọc xong, request tới), callback được gọi.
+Điều này giúp Node.js xử lý hàng loạt yêu cầu một cách không đồng bộ, không bị block, và rất phù hợp với ứng dụng I/O-heavy.
+Node.js xử lý lỗi như thế nào trong môi trường async?
+==> Trong môi trường async, lỗi thường xảy ra sau khi tác vụ khởi chạy. Node.js xử lý lỗi async qua:
+
+Callback-style: dùng tham số err đầu tiên
+
+Promise/async-await: dùng .catch() hoặc try...catch
+
+Sự kiện uncaughtException, unhandledRejection để xử lý lỗi toàn cục
+👉 Quan trọng: Luôn đảm bảo không để lỗi "bị nuốt" và log đầy đủ.
+So sánh Node.js với các nền tảng backend khác như Python (Django, Flask).
+
+💼 4. Câu hỏi phỏng vấn thực tế (5 câu)
+Bạn đã từng xây dựng ứng dụng nào với Node.js chưa? Hãy mô tả kiến trúc.
+==> Em đã làm ứng dụng đặt vé xem phim - theo mô hình MVC 
+Khi nào bạn KHÔNG nên sử dụng Node.js?
+==> làm việc với CPU quá nặng, phép tính toán nặng hay hash
+Giải thích cách Node.js xử lý hàng ngàn kết nối đồng thời mà không bị nghẽn.
+==> Node.js dùng event loop + non-blocking I/O. Thay vì tạo 1 luồng cho mỗi kết nối (như PHP hay Java cũ), Node.js chỉ dùng 1 luồng chính để tiếp nhận request và ủy quyền I/O cho libuv. Khi I/O hoàn thành (đọc file, DB), kết quả sẽ đưa vào hàng đợi (event queue) và xử lý khi rảnh.
+Điều này giúp Node xử lý hàng ngàn request mà không tốn quá nhiều tài nguyên.
+Làm sao để xử lý lỗi toàn cục (uncaughtException) trong Node.js?
+==> ó thể xử lý lỗi toàn cục bằng cách lắng nghe các sự kiện hệ thống
+Node.js phù hợp với mô hình microservice không? Vì sao?
+==> có, vì micro là mô hình từ 1 cái lớn chia thành nhiều service nhỏ, mà Nodejs lại nhanh, hiệu suất cao
+hỗ trợ event-driven + non-blocking nên phù hợp
+
+
+event loop: 
+==> trái tim của Node.js, xử lý bất đồng bộ trong 1 luông duy nhất
+===> thay vì tạo nhiều luồng cho mỗi request ==> các tác vụ I/O được đưa vào event-queue 
+==> event-queue liên tục kiểm tra hàng đợi này, nếu có cái nào hoàn thành callback thực 
+
+non-blocking: Non-blocking nghĩa là không chờ tác vụ kết thúc mới chạy tiếp — Node.js gửi yêu cầu, rồi tiếp tục làm việc khác.

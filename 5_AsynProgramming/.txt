@@ -1,0 +1,14 @@
+setTimeOut: repeat code or function after over time (only)
+setInterval = repeat code or function always after over time
+callback: là 1 hàm được truyền vào như đối số của hàm khác
+promises: tạo ra tránh callback hell
+async/await: nâng câp promises, viết code giống như đồng bộ  
+
+
+
+1. process.nextTick queue (microtasks)
+2. Timers phase (setTimeout, setInterval)
+3. Pending callbacks phase
+4. Poll phase (I/O)
+5. Check phase (setImmediate)
+6. Close callbacks

@@ -1,0 +1,11 @@
+31,Gỡ toàn bộ package đang có (gỡ sạch node_modules, package-lock.json) và cài lại đúng version cần thiết.
+
+- npm init -y
+- npm install express mongoose --save-dev
+- npm install rimraf --save-dev
+- setting package.json: "clear" : "rimraf node_modules"
+- npm run clear -> xoa node_modules
+- npm uninstall express
+- npm uninstall mongoose
+- npm init -y
+- npm install express@5.1.0 --save-dev

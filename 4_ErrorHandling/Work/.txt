@@ -1,0 +1,49 @@
+Bài 1. Đọc file abc.txt không tồn tại → Bắt lỗi ENOENT.
+Bài 2. Ghi file vào thư mục hệ thống (/root/abc.txt) → Xử lý lỗi EACCES.
+Bài 3. Tạo folder "log" khi folder đã tồn tại → Bắt lỗi EEXIST.
+Bài 4. Đọc thư mục như file → Gây lỗi EISDIR.
+Bài 5. Mở 1000 file cùng lúc → Quan sát lỗi EMFILE.
+Bài 6. Tạo server Node chạy port 3000, rồi chạy lần 2 → Bắt lỗi EADDRINUSE.
+Bài 7. Viết script kết nối domain sai → Lỗi DNS ENOTFOUND.
+Bài 8. Gọi file JSON sai format → kết hợp fs.readFile + JSON.parse.
+Bài 9. Gọi file không đủ quyền trong Windows → Bắt EACCES.
+Bài 10. Dùng fs.unlink() xóa file không tồn tại → Bắt ENOENT.
+
+✅ II. USER-SPECIFIED ERROR (10 bài)
+
+Bài 11. Tạo UserNotFoundError và ném ra khi user === null.
+Bài 12. Viết hàm checkAge(age) → Nếu age < 18, throw AgeRestrictionError.
+Bài 13. Trong login(user, pass) → Nếu sai mật khẩu, ném AuthenticationError.
+Bài 14. Định nghĩa PermissionDeniedError → Khi role !== 'admin'.
+Bài 15. Viết class ValidationError → Nếu tên người dùng rỗng, throw.
+Bài 16. Tạo FileTooLargeError nếu file > 10MB.
+Bài 17. Tạo EmailExistsError nếu email đã tồn tại trong mảng.
+Bài 18. Tạo middleware Express bắt CustomError và trả status code phù hợp.
+Bài 19. Gắn error.statusCode để trả về mã 404, 403, 400...
+Bài 20. Viết hàm xử lý UserNotFoundError trả về JSON { error, message }.
+✅ III. JAVASCRIPT ERROR (10 bài)
+Các lỗi do JavaScript runtime gây ra.
+
+Bài 21. Gọi biến chưa khai báo → ReferenceError.
+Bài 22. Gọi .toUpperCase() trên số → TypeError.
+Bài 23. Gọi hàm undefined() → TypeError.
+Bài 24. Viết sai cú pháp: if x > 5 { → SyntaxError.
+Bài 25. eval("var a =") → SyntaxError.
+Bài 26. Dùng Array(-1) → RangeError.
+Bài 27. Dùng decodeURIComponent('%') → URIError.
+Bài 28. Kiểm tra logic: assert(x > 0) khi x = -1 → AssertionError.
+Bài 29. Tạo file JSON bị sai → JSON.parse('{a: 123}') → SyntaxError.
+Bài 30. new Function("a", "b", "return a +") → SyntaxError.
+✅ IV. UNCAUGHT EXCEPTION ERROR (10 bài)
+Lỗi không được bắt bằng try...catch, gây crash.
+
+Bài 31. Gọi throw new Error("Lỗi") mà không có try/catch.
+Bài 32. Dùng setTimeout(() => throw new Error("Async crash")) → crash.
+Bài 33. Gọi Promise.reject() mà không .catch().
+Bài 34. Không xử lý lỗi trong async function → gây uncaught.
+Bài 35. Sử dụng fs.readFile() → không kiểm tra err.
+Bài 36. Tạo try...catch nhưng lỗi nằm trong callback → vẫn crash.
+Bài 37. Gọi JSON.parse() sai mà không có catch.
+Bài 38. Tạo 1 lỗi trong middleware Express không dùng next(err) → crash.
+Bài 39. Ghi log process.on('uncaughtException', fn) khi crash.
+Bài 40. Viết 1 server mà khi có uncaught exception sẽ shutdown tự động.
